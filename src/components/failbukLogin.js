@@ -24,7 +24,7 @@ class Failbuk extends Component {
             });
 
             FB.getLoginStatus(function(response) {
-                () => {this.updateLoggedInState(response)};
+                (response) => {this.updateLoggedInState(response)};
             });
 
             FB.AppEvents.logPageView();
