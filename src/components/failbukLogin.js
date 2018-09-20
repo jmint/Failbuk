@@ -35,7 +35,11 @@ class Failbuk extends Component {
                 }
             });
             
-            FB.AppEvents.logPageView();   
+            FB.AppEvents.logPageView();
+
+            FB.api('/me', function(response) {
+                console.log(JSON.stringify(response));
+            });
             
         }.bind(this);
 
