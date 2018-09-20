@@ -7,11 +7,10 @@ class Failbuk extends Component {
             status: "Desactivate",
         }
         console.log(this);
-        //this.updateLoggedInState = this.updateLoggedInState.bind(this);
+
     }
 
     updateLoggedInState(response) {
-        console.log(this);
         this.setState ({
             status: response,
         })
