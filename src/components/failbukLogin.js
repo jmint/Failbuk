@@ -10,7 +10,7 @@ class Failbuk extends Component {
 
     }
 
-    updateLoggedInState(response) {
+    toto(response) {
         this.setState ({
             status: response,
         })
@@ -28,7 +28,7 @@ class Failbuk extends Component {
             });
 
             FB.getLoginStatus(function(response) {
-                this.updateLoggedInState(response);
+                this.toto(response);
             }.bind(this)); // este bind toma el this de la function de arriba que a su vez tomaba el this de la clase
 
             FB.AppEvents.logPageView();
