@@ -6,7 +6,8 @@ class Failbuk extends Component {
         this.state = {
             status: "Desactivate",
         }
-        this.statusChangeFailbuk = this.statusChangeFailbuk.bind(this);
+        this.updateLoggedInState = this.updateLoggedInState.bind(this);
+        this.updateLoggedOutState = this.updateLoggedOutState.bind(this);
     }
 
     updateLoggedInState(response) {
