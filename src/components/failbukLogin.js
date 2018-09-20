@@ -23,14 +23,15 @@ class Failbuk extends Component {
             version    : 'v3.1'
             });
 
-            
+            FB.getLoginStatus(function(response) {
+                () => {this.updateLoggedInState(response)};
+            });
+
             FB.AppEvents.logPageView();
             
         }.bind(this);
 
-        FB.getLoginStatus(function(response) {
-            this.updateLoggedInState(response);
-        });
+        
 
 
         (function(d, s, id){
