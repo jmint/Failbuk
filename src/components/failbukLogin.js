@@ -27,19 +27,11 @@ class Failbuk extends Component {
             version    : 'v3.1'
             });
 
-            window.FB.Event.subscribe('auth.statusChange', (response) => {
-                if (response.authResponse) {
-                    this.updateLoggedInState(response)
-                } else {
-                    this.updateLoggedOutState()
-                }
+            FB.getLoginStatus(function(response) {
+                console.log(response);
             });
             
             FB.AppEvents.logPageView();
-
-            FB.api('/me', function(response) {
-                console.log(JSON.stringify(response));
-            });
             
         }.bind(this);
 
