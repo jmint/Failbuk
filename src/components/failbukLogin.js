@@ -11,7 +11,7 @@ class Failbuk extends Component {
     }
 
     updateLoggedInState(response) {
-        console.log("logueado");
+        console.log("this");
         console.log(response);
     }
 
