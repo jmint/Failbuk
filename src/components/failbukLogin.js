@@ -26,7 +26,7 @@ class Failbuk extends Component {
             });
 
             FB.getLoginStatus(function(response) {
-                getFailbukStatus(response);
+                this.getFailbukStatus(response);
             }.bind(this)); // este bind toma el this de la function de arriba que a su vez tomaba el this de la clase
 
             FB.AppEvents.logPageView();
