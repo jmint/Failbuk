@@ -6,6 +6,7 @@ class Failbuk extends Component {
         this.state = {
             status: "Desactivate",
         }
+        console.log(this);
         this.updateLoggedInState = this.updateLoggedInState.bind(this);
     }
 
@@ -30,7 +31,7 @@ class Failbuk extends Component {
 
             FB.AppEvents.logPageView();
             
-        }.bind(this);
+        }.bind(this); // este bien pasa el this de
 
         
 
