@@ -12,6 +12,9 @@ class Failbuk extends Component {
 
     updateLoggedInState(response) {
         console.log(this);
+        this.setState ({
+            status: response,
+        })
         console.log(response);
     }
 
