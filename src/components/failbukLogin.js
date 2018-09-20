@@ -48,11 +48,10 @@ class Failbuk extends Component {
     render() {
         return (
             <div className="App">
+                <h1>Hola</h1>
                 {   
-                    <h1>Hola</h1>
-                    this.state.isLogged ? 
-                    <PresentationalIn /> : 
-                    <PresentationalOut />
+                    this.state.isLogged ? <PresentationalIn /> : <PresentationalOut />
+                    
                 }
             </div>
         );
