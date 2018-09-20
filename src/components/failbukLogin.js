@@ -9,8 +9,12 @@ class Failbuk extends Component {
         this.statusChangeFailbuk = this.statusChangeFailbuk.bind(this);
     }
 
-    statusChangeFailbuk(response) {
-        response.status === 'connected' ? console.log(response): console.log("no login")
+    updateLoggedInState(response) {
+        console.log(response);
+    }
+
+    updateLoggedOutState() {
+        console.log("sin login");
     }
 
     componentDidMount() {
@@ -22,8 +26,12 @@ class Failbuk extends Component {
             version    : 'v3.1'
             });
 
-            FB.getLoginStatus(function(response) {
-                this.statusChangeFailbuk(response);
+            window.FB.Event.subscribe('auth.statusChange', (response) => {
+                if (response.authResponse) {
+                    this.updateLoggedInState(response)
+                } else {
+                    this.updateLoggedOutState()
+                }
             });
             
             FB.AppEvents.logPageView();   
