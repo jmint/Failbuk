@@ -7,16 +7,12 @@ class Failbuk extends Component {
             status: "Desactivate",
         }
         this.updateLoggedInState = this.updateLoggedInState.bind(this);
-        this.updateLoggedOutState = this.updateLoggedOutState.bind(this);
     }
 
     updateLoggedInState(response) {
         console.log(response);
     }
 
-    updateLoggedOutState() {
-        console.log("sin login");
-    }
 
     componentDidMount() {
         window.fbAsyncInit = function() {
@@ -28,7 +24,7 @@ class Failbuk extends Component {
             });
 
             FB.getLoginStatus(function(response) {
-                console.log(response);
+                this.updateLoggedInState(response);
             });
             
             FB.AppEvents.logPageView();
