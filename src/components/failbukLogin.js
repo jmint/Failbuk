@@ -4,17 +4,15 @@ class Failbuk extends Component {
     constructor() {
         super();
         this.state = {
-            status: "Desactivate",
+            isLogged: false,
         }
         console.log(this);
         this.getFailbukStatus = this.getFailbukStatus.bind(this);
     }
 
     getFailbukStatus(response) {
-
-        console.log(response);
+        response.authResponse.status==="connected" && this.setState({isLogged:true})
     }
-
 
     componentDidMount() {
         window.fbAsyncInit = function() {
@@ -45,12 +43,28 @@ class Failbuk extends Component {
         }(document, 'script', 'facebook-jssdk'));
 
 
-        }
+        }   
 
     render() {
-        return (<div className="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>)
-    }
+        return (
+            <div className="App">
+                {
+                    this.state.isLogged ? 
+                    <PresentationalIn /> : 
+                    <PresentationalOut />
+                }
+            </div>
+        );
+    } 
 
+}
+
+const PresentationalIn = () => {
+    <p>Hola</p>
+}
+
+const PresentationalOut = () {
+    <div className="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
 }
 
 export default Failbuk
