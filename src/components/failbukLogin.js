@@ -11,7 +11,7 @@ class Failbuk extends Component {
     }
 
     getFailbukStatus(response) {
-        response.authResponse.status==="connected" && this.setState({isLogged:true})
+        response.authResponse.status==="connected" && console.log("true")
     }
 
     componentDidMount() {
