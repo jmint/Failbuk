@@ -14,6 +14,10 @@ class Failbuk extends Component {
         response.status==="connected" && this.setState({isLogged:true})
     }
 
+    logoutFailbuk(response) {
+        console.log(response)
+    }
+
     componentDidMount() {
         window.fbAsyncInit = function() {
             FB.init({
@@ -28,6 +32,10 @@ class Failbuk extends Component {
             }.bind(this)); // este bind toma el this de la function de arriba que a su vez tomaba el this de la clase
 
             FB.AppEvents.logPageView();
+
+            FB.logout(function(response) {
+                this.logoutFailbuk(response);
+             }.bind(this));
             
         }.bind(this); // este bind pasa el this de la clase
 
