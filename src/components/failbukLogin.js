@@ -6,14 +6,13 @@ class Failbuk extends Component {
         this.state = {
             isLogged: false,
         }
-        console.log(this);
         this.getFailbukStatus = this.getFailbukStatus.bind(this);
     }
 
     getFailbukStatus(response) {
         console.log(response)
         console.log(response.authResponse)
-        console.log(response.authResponse.status)
+        console.log(response.status)
         response.authResponse.status==="connected" && console.log("true")
     }
 
